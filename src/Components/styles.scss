@@ -18,6 +18,7 @@ h1 {
 }
 .images {
     display: flex;
+    flex-wrap: wrap;
     .single-image {
         padding: 1rem 0;
         width: 50%;
