@@ -10,20 +10,26 @@ const Blogs = ({ data }) => {
   } = data
   // console.log(data)
   return (<Layout>
-    <section className="blog-main">
-      {blogs.map(blog => {
-        return (
-          <div key={blog.id} className="col">
-            <figure>
-              <Img fluid={blog.image[0].fluid} alt="blogimage" />
-            </figure>
-            <h3>{blog.title}</h3>
-            <p>{blog.info}</p>
-            <p>{blog.time}</p>
-            <Link to={`/blogs/${blog.slug}`}>More Details</Link>
-          </div>
-        )
-      })}
+    <section className="blog-main py-5">
+      <div className="container">
+        <div className="row">
+          {blogs.map(blog => {
+            return (
+              <div className="col-md-4 mb-4" key={blog.id}>
+                <div className="card">
+                  <Img fluid={blog.image[0].fluid} alt="blogimage" className="card-img-top" />
+                  <div className="card-body">
+                    <h3 className="card-title">{blog.title}</h3>
+                    <p className="card-text">{blog.info}</p>
+                    <p className="card-text">{blog.time}</p>
+                    <Link to={`/blogs/${blog.slug}`} className="btn btn-info">More Details</Link>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </section>
   </Layout>)
 

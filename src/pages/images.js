@@ -36,16 +36,17 @@ const Images = () => {
     //console.log(data)
     return (
         <Layout>
-            <section className="images">
-                <figure className="single-image">
-                    <h3>Fixed Image</h3>
-                    <Image fixed={data.fixed.childImageSharp.fixed} />
-                </figure>
-                <figure className="single-image">
-                    <h3>Fluid Image</h3>
-                    <Image fluid={data.fluid.childImageSharp.fluid} />
-                </figure>
-            </section>
+            <div className="container py-5">
+                <div className="row">
+                    <div className="col-md-6">
+                        <figure className="single-image">
+                            <h3>Fluid Image</h3>
+                            <Image fluid={data.fluid.childImageSharp.fluid} />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
         </Layout>
     )
 }

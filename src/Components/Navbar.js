@@ -1,24 +1,22 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import './styles.scss'
+import { Link } from 'gatsby';
+import React from 'react';
+import NavLink from './Navlink';
 
-const Navbar = () => {
-    return (
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/images">Images</Link>
-                </li>
-                <li>
-                    <Link to="/blogs">Blog Posts</Link>
-                </li>
-
-            </ul>
+const Navbar = () => (
+    <header>
+        <nav className="navbar navbar-expand-sm navbar-light bg-light">
+            <Link to="/" className="navbar-brand"> Gatsby Website</Link>
+            <div className="navbar-collapse">
+                <div className="navbar-nav ml-auto">
+                    <NavLink to="/" className="nav-item nav-link">Welcome</NavLink>
+                    <NavLink to="/images" className="nav-item nav-link">Images</NavLink>
+                    <NavLink to="/blogs" className="nav-item nav-link">Blog</NavLink>
+                </div>
+            </div>
         </nav>
-    )
-}
+    </header >
 
-export default Navbar
+);
+
+
+export default Navbar;
